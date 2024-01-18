@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class ComputerPlayer extends Player { // Defines ComputerPlayer class that inherits from Player abstract class
-    private Random random; // Creates an instance of the Random class for generating random numbers
+    private final Random random; // Creates an instance of the Random class for generating random numbers
 
     // Constructor
     public ComputerPlayer() { // Defines constructor of ComputerPlayer class. When instantiate a ComputerPlayer object, this constructor will be executed
