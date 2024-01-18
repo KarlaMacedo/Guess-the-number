@@ -17,7 +17,7 @@ public class HumanPlayer extends Player { // Defines HumanPlayer class that inhe
     @Override // This method overrides a method of the base class
     public int makeGuess() { // Defines the method, which requests user's guess and returns the entered value as an integer
         Scanner scanner = new Scanner(System.in); // New scanner integer input tu obtain user data enter
-        System.out.print(name + ", enter your guess (between 1 and 100): "); // Print player name and message to request the guess
+        System.out.print(name + ", enter a number between 1 and 100 to guess the selected number: "); // Print player name and message to request the guess
         int guess = scanner.nextInt(); // Gets the guess entered by the user
         recordGuess(guess); // Records the guess in the history
         return guess; // Returns entered integer value
