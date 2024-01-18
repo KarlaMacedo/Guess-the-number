@@ -23,4 +23,9 @@ public abstract class Player { // Defines the abstract class Player. Serves as a
     public ArrayList<Integer> getGuesses() { // Defines the method to obtain player's guess history
         return guesses; // Returns player´s guess history
     }
+
+    // Method to record a guess
+    public void recordGuess(int guess) {
+        guesses.add(guess);
+    }
 }
