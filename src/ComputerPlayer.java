@@ -23,7 +23,7 @@ public class ComputerPlayer extends Player { // Defines ComputerPlayer class tha
     }
 
     //Method to make computer intelligent
-    private int generateIntelligentGuess() { // Defines the method to calculate the computer's intelligent guess
+    int generateIntelligentGuess() { // Defines the method to calculate the computer's intelligent guess
         int previousGuess = getPreviousGuess(); // Gets the previous guess from the history by getPreviousGuess method
 
         // Adjust the guess based on the relationship between the previous guess and the target number

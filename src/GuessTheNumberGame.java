@@ -23,14 +23,14 @@ public class GuessTheNumberGame { // Defines class
     }
 
     // Method to generate a random target number
-    private int targetNumber() { // Defines the static boolean method to generate a random target number
+    int targetNumber() { // Defines the static boolean method to generate a random target number
         Random random = new Random(); // Creates an instance of the Random class
         return random.nextInt(100) + 1; // Generates a random number between 1 and 99 + 1 to include 100 ... (max-min)+min
         //return (int) (Math.random() * 100) + 1; // Generates a random number between 0-1 and * 100 + 1 to include 100
     }
 
     // Method to verify player´s guess
-    private static boolean checkGuess(int guess, int targetNumber) { // Defines the static boolean method to verify player´s guess
+    static boolean checkGuess(int guess, int targetNumber) { // Defines the static boolean method to verify player´s guess
         return guess == targetNumber;
     }
 
