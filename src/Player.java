@@ -25,7 +25,7 @@ public abstract class Player { // Defines the abstract class Player. Serves as a
     }
 
     // Method to record a guess
-    public void recordGuess(int guess) {
-        guesses.add(guess);
+    public void recordGuess(int guess) { // Defines the method to record player's guess
+        guesses.add(guess); // Adds the guess to the history
     }
 }
