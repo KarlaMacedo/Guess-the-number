@@ -3,7 +3,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.io.PrintStream;
 
 class GuessTheNumberGameTest {
 
@@ -78,6 +80,31 @@ class GuessTheNumberGameTest {
     private void provideMockedInput(String input) {
         InputStream mockedInputStream = new ByteArrayInputStream(input.getBytes());
         System.setIn(mockedInputStream);
+    }
+
+    @Test
+    public void testMakeIntGuess() {
+        String input = "Karla\n50\n";
+
+        InputStream inputStream = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inputStream);
+
+        HumanPlayer humanPlayer = new HumanPlayer();
+        int guess = humanPlayer.makeGuess();
+
+        System.setIn(System.in);
+
+        assertEquals(50, guess);
+    }
+
+    @Test
+    public void testMakeIntGuess2(){
+        System.setIn(new ByteArrayInputStream("Karla\n".getBytes()));
+        System.setIn(new ByteArrayInputStream("50\n".getBytes()));
+        HumanPlayer humanPlayer = new HumanPlayer();
+        int guess = humanPlayer.makeGuess();
+
+        assertEquals(50, guess);
     }
 
 }
