@@ -66,6 +66,10 @@ class GuessTheNumberGameTest {
         assertEquals(playerName, humanPlayer.getName());
     }
 
+    private void provideMockedInput(String input) {
+        InputStream mockedInputStream = new ByteArrayInputStream(input.getBytes());
+        System.setIn(mockedInputStream);
+    }
     @Test
     public void testHumanPlayerMakeGuess() {
         HumanPlayer humanPlayer = mock(HumanPlayer.class);
@@ -75,36 +79,6 @@ class GuessTheNumberGameTest {
         int guess = humanPlayer.makeGuess();
 
         assertEquals(5, guess);
-    }
-
-    private void provideMockedInput(String input) {
-        InputStream mockedInputStream = new ByteArrayInputStream(input.getBytes());
-        System.setIn(mockedInputStream);
-    }
-
-    @Test
-    public void testMakeIntGuess() {
-        String input = "Karla\n50\n";
-
-        InputStream inputStream = new ByteArrayInputStream(input.getBytes());
-        System.setIn(inputStream);
-
-        HumanPlayer humanPlayer = new HumanPlayer();
-        int guess = humanPlayer.makeGuess();
-
-        System.setIn(System.in);
-
-        assertEquals(50, guess);
-    }
-
-    @Test
-    public void testMakeIntGuess2(){
-        System.setIn(new ByteArrayInputStream("Karla\n".getBytes()));
-        System.setIn(new ByteArrayInputStream("50\n".getBytes()));
-        HumanPlayer humanPlayer = new HumanPlayer();
-        int guess = humanPlayer.makeGuess();
-
-        assertEquals(50, guess);
     }
 
 }

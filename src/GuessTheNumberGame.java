@@ -35,7 +35,7 @@ public class GuessTheNumberGame { // Defines class
     }
 
     // Method to get the game summary
-    private static void displayGameSummary(int turns, Player player, int targetNumber) { // Defines the method to get the game summary
+    static void displayGameSummary(int turns, Player player, int targetNumber) { // Defines the method to get the game summary
         System.out.println("GAME SUMMARY:");
         System.out.println("Player: " + player.getName());
         System.out.println("Guessed number: " + targetNumber);
