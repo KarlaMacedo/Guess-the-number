@@ -25,7 +25,7 @@ public class HumanPlayer extends Player { // Defines HumanPlayer class that inhe
                 return guess; // Returns entered integer value and breaks the loop and exitíng the method
             } else { // if is not an integer number
                 System.out.println("Invalid value. Please enter a ONLY integer numbers."); // Prints an error message
-                scanner.next(); // Cleans the buffer to prevent an infinite loop
+                String next = scanner.next();// Cleans the buffer to prevent an infinite loop
             }
         }
     }
