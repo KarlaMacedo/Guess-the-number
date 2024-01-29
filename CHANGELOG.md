@@ -19,3 +19,27 @@ Does not apply
 ### Removed
 
 Does not apply
+
+
+## <1.0.2> - <2024-01-29>
+
+### Sprint learnings
+
+Test with mockito and junit.
+
+### Added
+
+Don´t break the game if a number isn´t entered, handling it with a message.
+Test.
+
+### Changed
+
+Access modifiers for some methods to be able to pass the tests.
+
+### Fixed
+
+Don´t break the game if a number isn´t entered, handling it with a message.
+
+### Removed
+
+Does not apply.
