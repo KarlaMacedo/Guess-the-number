@@ -55,7 +55,7 @@ class GuessTheNumberGameTest {
     }
 
     @Test
-    public void testPlayerNameValidation() {
+    public void playerNameValidation() {
         String playerName = "John Doe";
         provideMockedInput(playerName);
 

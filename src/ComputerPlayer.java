@@ -2,49 +2,51 @@ import java.util.Random; // to generate random numbers
 import java.util.ArrayList; // to use a dynamic list of elements
 
 public class ComputerPlayer extends Player { // Defines ComputerPlayer class that inherits from Player abstract class
-    private final Random random; // Creates an instance of the Random class for generating random numbers
-    private final int targetNumber; // Stores the target number for the game
+    //Instance of immutable and private variables
+    private final Random random;
+    private final int targetNumber;
 
-    // Constructor
-    public ComputerPlayer(int targetNumber) { // Defines constructor of ComputerPlayer class. When instantiate a ComputerPlayer object, this constructor will be executed
-        super("\uD83D\uDDA5\uFE0F Computer"); // Calls the constructor of the base class (Player) and sets the default name to "Computer"
-        this.random = new Random(); // Initializes the Random instance for generating random numbers
+    // Constructor. When instantiate a ComputerPlayer object, will be executed
+    public ComputerPlayer(int targetNumber) {
+        super("\uD83D\uDDA5\uFE0F Computer"); // Calls constructor of the base class (Player) and sets default name
+        this.random = new Random(); // Initializes instance for generating random numbers
         this.targetNumber = targetNumber; // Sets the targetNumber for the game
     }
 
     @Override // This method overrides a method of the base class.
-    // Method to make computer´s guess
-    public int makeGuess() { // Defines the method, which generates a random guess and returns it
-        int computerGuess = generateIntelligentGuess(); // Calls the generateIntelligentGuess method to calculate the computer's next guess
+    // Method to make computer´s guess, call a method to generate a random guess with intelligent, record it and returns it
+    public int makeGuess() {
+        int computerGuess = generateIntelligentGuess();
 
-        recordGuess(computerGuess);// Records the guess in the history
+        recordGuess(computerGuess);// Method of the base class (Player)
 
-        return computerGuess;// Returns the randomly generated guess
+        return computerGuess;
     }
 
-    //Method to make computer intelligent
-    int generateIntelligentGuess() { // Defines the method to calculate the computer's intelligent guess
-        int previousGuess = getPreviousGuess(); // Gets the previous guess from the history by getPreviousGuess method
+    //Method to make computer intelligent based on past Computer´s guesses
+    int generateIntelligentGuess() {
+        int previousGuess = getPreviousGuess();
 
-        // Adjust the guess based on the relationship between the previous guess and the target number
-        if (previousGuess > 0) {
-            if (previousGuess < targetNumber) {
-                return previousGuess + random.nextInt(10) + 1; // If previous guess was too low, make a higher guess
-            } else {
-                return previousGuess - random.nextInt(10) - 1; // If previous guess was too high, make a lower guess
-            }
-        } else {
+        if (previousGuess < 0) {
             return random.nextInt(100) + 1; // Initial guess if no previous guess is available
+        } else {
+            if (previousGuess < targetNumber) {
+                return previousGuess + random.nextInt(10) + 1;
+            } else {
+                return previousGuess - random.nextInt(10) - 1;
+            }
         }
+
     }
 
-    // Method to get the previous guess from the history
-    private int getPreviousGuess() { // Defines the method to get the previous guess from the history
-        // Retrieve the last guess from the guess history
-        ArrayList<Integer> guesses = getGuesses(); // Gets the guess history
+    // Method to get the previous guess from the history or -1 if no previous guess is available
+    private int getPreviousGuess() {
+        ArrayList<Integer> guesses = getGuesses(); // Method of the base class (Player)
+
         if (!guesses.isEmpty()) {
-            return guesses.getLast(); // Returns the last element in the list (last guess)
+            return guesses.getLast(); //last element in the list
         }
-        return -1; // Return -1 if no previous guess is available
+
+        return -1;
     }
 }
