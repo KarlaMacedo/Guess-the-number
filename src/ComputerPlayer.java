@@ -7,7 +7,7 @@ public class ComputerPlayer extends Player { // Defines ComputerPlayer class tha
 
     // Constructor
     public ComputerPlayer(int targetNumber) { // Defines constructor of ComputerPlayer class. When instantiate a ComputerPlayer object, this constructor will be executed
-        super("Computer"); // Calls the constructor of the base class (Player) and sets the default name to "Computer"
+        super("\uD83D\uDDA5\uFE0F Computer"); // Calls the constructor of the base class (Player) and sets the default name to "Computer"
         this.random = new Random(); // Initializes the Random instance for generating random numbers
         this.targetNumber = targetNumber; // Sets the targetNumber for the game
     }

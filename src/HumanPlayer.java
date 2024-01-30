@@ -10,8 +10,8 @@ public class HumanPlayer extends Player { // Defines HumanPlayer class that inhe
 
     private void setName() { // Defines the method to request the player's name and assign it to the name variable
         Scanner scanner = new Scanner(System.in); // New scanner integer input tu obtain user data enter
-        System.out.print("What is your name? "); // Print the question
-        this.name = scanner.nextLine(); // Assigns user data enter to the name variable
+        System.out.print("What is your name? \n"); // Print the question
+        this.name = "\uD83D\uDE42" + scanner.nextLine(); // Assigns user data enter to the name variable
     }
 
     @Override // This method overrides a method of the base class
@@ -24,7 +24,7 @@ public class HumanPlayer extends Player { // Defines HumanPlayer class that inhe
                 recordGuess(guess); // Records the guess in the history
                 return guess; // Returns entered integer value and breaks the loop and exitíng the method
             } else { // if is not an integer number
-                System.out.println("Invalid value. Please enter a ONLY integer numbers."); // Prints an error message
+                System.out.println("Invalid value. Please enter a ONLY integer numbers. ❌ \n"); // Prints an error message
                 scanner.next();// Cleans the buffer to prevent an infinite loop
             }
         }

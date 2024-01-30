@@ -2,7 +2,7 @@ import java.util.Random;
 public class GuessTheNumberGame { // Defines class
     public static void main(String[] args) { // Starts main method (this method, will be executed in program start)
         GuessTheNumberGame game = new GuessTheNumberGame(); // Initializes the GuessTheNumberGame instance for generating a new game and assign it in game variable
-        System.out.println("Welcome to the Guess Number Game!"); // Welcome message
+        System.out.println("❓⁉\uFE0F  Welcome to the Guess Number Game!  ❓⁉\uFE0F"); // Welcome message
         int targetNumber = game.targetNumber(); // Generates a random target number by calling the 'targetNumber' method of the 'game' instance
         Player[] players = { new ComputerPlayer(targetNumber), new HumanPlayer() }; // Creates an array of players
 
@@ -13,11 +13,11 @@ public class GuessTheNumberGame { // Defines class
             int guess = player.makeGuess(); // Player makes a guess
 
             if (checkGuess(guess, targetNumber)) { // Calls the makeGuess() method of the 'player' instance, checks if the guess is correct by calling the checkGuess method
-                System.out.println(player.getName() + " you chose: " + guess + ". You GUESSED the number. ¡CONGRATULATIONS!"); // Prints a message if the guess is correct
+                System.out.println(player.getName() + " you chose: " + guess + ". You GUESSED the number. \uD83D\uDE4C ¡CONGRATULATIONS! \uD83E\uDD47 \n"); // Prints a message if the guess is correct
                 displayGameSummary(turn, player, targetNumber); // Calls game summary, given it turn, player and targetNumber
                 break; // Exits the loop if the guess is correct
             } else {
-                System.out.println(player.getName() + " chose: " + guess + ". The number is " + ((guess < targetNumber) ? "HIGHER" : "LOWER") + ". Try again!"); // Prints a message indicating whether the guess is higher or lower than the target number
+                System.out.println("\n" + player.getName() + " chose: " + guess + ". The number is " + ((guess < targetNumber) ? "HIGHER ⤴\uFE0F" : "LOWER ⬇\uFE0F") + ". Try again! \n"); // Prints a message indicating whether the guess is higher or lower than the target number
             }
         }
     }
@@ -36,8 +36,8 @@ public class GuessTheNumberGame { // Defines class
 
     // Method to get the game summary
     static void displayGameSummary(int turns, Player player, int targetNumber) { // Defines the method to get the game summary
-        System.out.println("GAME SUMMARY:");
-        System.out.println("Player: " + player.getName());
+        System.out.println(" \uD83C\uDFC6 GAME SUMMARY \uD83C\uDFC6");
+        System.out.println("Winner: " + player.getName());
         System.out.println("Guessed number: " + targetNumber);
         System.out.println("Number of total turns in the game: " + turns);
         System.out.println("Number of winner's attempts: " + player.getGuesses().size()); // Count the number of guesses
