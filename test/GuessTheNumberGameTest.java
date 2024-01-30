@@ -56,12 +56,12 @@ class GuessTheNumberGameTest {
 
     @Test
     public void playerNameValidation() {
-        String playerName = "John Doe";
+        String playerName = "Victoria";
         provideMockedInput(playerName);
 
         HumanPlayer humanPlayer = new HumanPlayer();
 
-        assertEquals(playerName, humanPlayer.getName());
+        assertEquals("\uD83D\uDE42 " + playerName, humanPlayer.getName());
     }
 
     private void provideMockedInput(String input) {

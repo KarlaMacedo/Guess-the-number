@@ -11,8 +11,8 @@ public class HumanPlayer extends Player { // Defines HumanPlayer class that inhe
     // Method to request the player's name and assign it to the name variable
     private void setName() {
         Scanner scanner = new Scanner(System.in); // Input to obtain user data enter
-        System.out.print("What is your name? \n");
-        this.name = "\uD83D\uDE42" + scanner.nextLine(); // Assigns user data enter to the name variable
+        System.out.print("What is your name?");
+        this.name = "\uD83D\uDE42 " + scanner.nextLine(); // Assigns user data enter to the name variable
     }
 
     @Override // This method overrides a method of the base class

@@ -3,14 +3,14 @@ public class GuessTheNumberGame {
     public static void main(String[] args) { //main method will be executed in program start
         GuessTheNumberGame game = new GuessTheNumberGame(); // Initializes the GuessTheNumberGame instance for generating a new game and assign it in game object
 
-        System.out.println("❓⁉\uFE0F  Welcome to the Guess Number Game!  ❓⁉\uFE0F");
+        System.out.println("\n ❓⁉\uFE0F  Welcome to the Guess Number Game!  ❓⁉\uFE0F \n");
 
         int targetNumber = game.targetNumber(); // Generates a random target number by calling the 'targetNumber' method
         Player[] players = { new ComputerPlayer(targetNumber), new HumanPlayer() }; // "Composition". Creates an array of players
 
         for (int turn = 1; ; turn++) { // Loop for alternating turns between players until the game is won
             Player player = players[turn % 2];
-            System.out.println("Turn " + turn + ": It's " + player.getName() + "'s turn! ");
+            System.out.println("\n Turn " + turn + ": It's " + player.getName() + "'s turn! ");
 
             int guess = player.makeGuess(); // Player makes a guess
 
@@ -19,7 +19,7 @@ public class GuessTheNumberGame {
                 displayGameSummary(turn, player, targetNumber); // Calls game summary
                 break; // Exits the loop if the guess is correct
             } else {
-                System.out.println("\n" + player.getName() + " chose: " + guess + ". The number is " + ((guess < targetNumber) ? "HIGHER ⤴\uFE0F" : "LOWER ⬇\uFE0F") + ". Try again! \n");
+                System.out.println(player.getName() + " chose: " + guess + ". The number is " + ((guess < targetNumber) ? "HIGHER ⤴\uFE0F" : "LOWER ⬇\uFE0F") + ". Try again!");
             }
         }
     }
